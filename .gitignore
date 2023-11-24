@@ -2,13 +2,22 @@
 *.rbc
 /.config
 /coverage/
+/storage/*.sqlite3
+/storage/*.sqlite3-journal
+/storage/*.sqlite3-[0-9]*
 /InstalledFiles
 /pkg/
 /spec/reports/
 /spec/examples.txt
 /test/tmp/
 /test/version_tmp/
-/tmp/
+
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
 
 # Used by dotenv library to load environment variables.
 # .env
