@@ -2,13 +2,18 @@
 
 <h1>Artists</h1>
 
-<div id="artists">
+<div id="artists" class="container">
   <% @artists.each do |artist| %>
-    <%= render artist %>
-    <p>
-      <%= link_to "Show this artist", artist %>
-    </p>
+    <div class="row">
+      <div class="col-md-8">
+        <%= artist.name %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to "Show this artist", artist %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New artist", new_artist_path %>
+<%= link_to "New artist", new_artist_path, class: "btn btn-primary" %>
+
