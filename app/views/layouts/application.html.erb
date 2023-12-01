@@ -15,6 +15,17 @@
       <h1>LEVYLOOTA</h1>
     </header>
     <main class="container p-3">
+
+      <nav>
+        <ul class="nav">
+          <li class="nav-item">
+            <%= link_to "Artistit", artists_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Levyt", albums_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </nav>
       <%= yield %>
     </main>
     <footer>

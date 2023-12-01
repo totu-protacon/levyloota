@@ -2,7 +2,7 @@
 
 <h1>Artists</h1>
 
-<div id="artists" class="container">
+<div id="artists" class="container-fluid">
   <% @artists.each do |artist| %>
     <div class="row">
       <div class="col-md-8">
@@ -14,6 +14,8 @@
     </div>
   <% end %>
 </div>
+<div class="container-fluid mt-4">
+  <%= link_to "New artist", new_artist_path, class: "btn btn-primary" %>
+</div>
 
-<%= link_to "New artist", new_artist_path, class: "btn btn-primary" %>
 
