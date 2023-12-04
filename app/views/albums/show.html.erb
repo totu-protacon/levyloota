@@ -2,6 +2,24 @@
 
 <%= render @album %>
 
+<h3>Tracks</h3>
+<table class="table table-striped table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @album.tracks.each do |track| %>
+    <tr>
+      <td><%= track.track_number %></td>
+      <td><%= track.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <div>
   <%= link_to "Edit this album", edit_album_path(@album) %> |
   <%= link_to "Back to albums", albums_path %>

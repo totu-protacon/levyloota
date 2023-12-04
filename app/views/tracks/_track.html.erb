@@ -1,17 +1,10 @@
-<div id="<%= dom_id track %>">
-  <p>
-    <strong>Name:</strong>
-    <%= track.name %>
-  </p>
-
-  <p>
+<div id="<%= dom_id track %>" class="row">
+  <div class="col">
     <strong>Track number:</strong>
     <%= track.track_number %>
-  </p>
-
-  <p>
-    <strong>Album:</strong>
-    <%= track.album_id %>
-  </p>
-
+  </div>
+  <div class="col">
+    <strong>Name:</strong>
+    <%= track.name %>
+  </div>
 </div>
