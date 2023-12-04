@@ -2,13 +2,11 @@
 
 <h1>Albums</h1>
 
-<div id="albums">
+<div id="albums" class="row">
   <% @albums.each do |album| %>
     <%= render album %>
-    <p>
-      <%= link_to "Show this album", album %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New album", new_album_path %>
+<div class="container-fluid mt-4">
+  <%= link_to "New album", new_album_path, class: "btn btn-primary" %>
+</div>

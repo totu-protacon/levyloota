@@ -1,22 +1,13 @@
-<div id="<%= dom_id album %>">
-  <p>
-    <strong>Name:</strong>
-    <%= album.name %>
-  </p>
-
-  <p>
-    <strong>Release year:</strong>
-    <%= album.release_year %>
-  </p>
-
-  <p>
-    <strong>Image url:</strong>
-    <%= album.image_url %>
-  </p>
-
-  <p>
-    <strong>Artist:</strong>
-    <%= album.artist_id %>
-  </p>
-
+<div class="col-md-4">
+  <div id="<%= dom_id album %>" class="card" style="width: 18rem;">
+    <img src="<%= album.image_url %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= album.name %></h5>
+      <p class="card-text">
+        <strong>Release year:</strong>
+        <%= album.release_year %>
+      </p>
+      <%= link_to "Show", album, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
