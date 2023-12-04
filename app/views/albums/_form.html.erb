@@ -1,27 +1,30 @@
 <%= form_with(model: album) do |form| %>
   <%= render 'shared/error_messages', object: form.object %>
+  <div class="row">
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <div class="mb-3 col-md-6">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <%= form.label :artist_id, class: 'form-label' %>
+      <%= form.select :artist_id, Artist.all.collect { |artist| [artist.name, artist.id] },
+                      {include_blank: 'Valitse artisti'}, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <%= form.label :release_year, class: 'form-label' %>
+      <%= form.number_field :release_year, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <%= form.label :image_url, class: 'form-label' %>
+      <%= form.text_field :image_url, class: 'form-control' %>
+    </div>
+
   </div>
-
-  <div>
-    <%= form.label :release_year, style: "display: block" %>
-    <%= form.number_field :release_year %>
-  </div>
-
-  <div>
-    <%= form.label :image_url, style: "display: block" %>
-    <%= form.text_field :image_url %>
-  </div>
-
-  <div>
-    <%= form.label :artist_id, style: "display: block" %>
-    <%= form.text_field :artist_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
