@@ -24,6 +24,29 @@
     </div>
 
   </div>
+
+  <h3>Tracks</h3>
+
+  <%= form.fields_for :tracks do |track_form| %>
+  <div class="row">
+    <div class="mb-3 col-md-3">
+      <%= track_form.label :track_number, class: 'form-label' %>
+      <%= track_form.number_field :track_number, class: 'form-control' %>
+    </div>
+    <div class="mb-3 col-md-6">
+      <%= track_form.label :name, class: 'form-label' %>
+      <%= track_form.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= track_form.label :_destroy, class: 'form-check-label' %>
+      <div>
+        <%= track_form.check_box :_destroy, class: 'form-check-input' %>
+      </div>
+    </div>
+
+  </div>
+    <% end %>
+
   <div class="mb-3">
     <%= form.submit class: "btn btn-primary" %>
   </div>

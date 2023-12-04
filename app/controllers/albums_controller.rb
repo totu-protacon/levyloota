@@ -13,10 +13,12 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   def new
     @album = Album.new
+    8.times { @album.tracks.build }
   end
 
   # GET /albums/1/edit
   def edit
+    3.times { @album.tracks.build }
   end
 
   # POST /albums or /albums.json
@@ -65,6 +67,7 @@ class AlbumsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def album_params
-      params.require(:album).permit(:name, :release_year, :image_url, :artist_id)
+      params.require(:album).permit(:name, :release_year, :image_url, :artist_id,
+                                    tracks_attributes: [:id, :name, :track_number, :_destroy])
     end
 end
