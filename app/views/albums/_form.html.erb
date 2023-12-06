@@ -9,7 +9,7 @@
 
     <div class="mb-3 col-md-6">
       <%= form.label :artist_id, class: 'form-label' %>
-      <%= form.select :artist_id, Artist.all.collect { |artist| [artist.name, artist.id] },
+      <%= form.select :artist_id, Artist.all.order(:name).collect { |artist| [artist.name, artist.id] },
                       {include_blank: 'Valitse artisti'}, class: 'form-control' %>
     </div>
 
