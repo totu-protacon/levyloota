@@ -3,16 +3,13 @@
 <h1>Artists</h1>
 
 <div id="artists" class="container-fluid">
-  <% @artists.each do |artist| %>
-    <div class="row">
-      <div class="col-md-8">
-        <%= artist.name %>
-      </div>
-      <div class="col-md-4">
-        <%= link_to "Show this artist", artist %>
-      </div>
-    </div>
-  <% end %>
+  <ul>
+    <% @artists.each do |artist| %>
+      <li>
+        <%= link_to artist.name, artist %>
+      </li>
+    <% end %>
+  </ul>
 </div>
 <div class="container-fluid mt-4">
   <%= link_to "New artist", new_artist_path, class: "btn btn-primary" %>

@@ -1,8 +1,11 @@
 <div class="col-md-4">
-  <div id="<%= dom_id album %>" class="card" style="width: 18rem;">
+  <div id="<%= dom_id album %>" class="card m-3" >
     <img src="<%= album.image_url %>" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><%= album.name %></h5>
+      <p class="card-text">
+        <strong><%= album.artist.name %></strong>
+      </p>
       <p class="card-text">
         <strong>Release year:</strong>
         <%= album.release_year %>
