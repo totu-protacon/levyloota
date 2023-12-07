@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
 
   # GET /albums or /albums.json
   def index
-    @albums = Album.all
+    @albums = Album.all.order(:release_year)
   end
 
   # GET /albums/1 or /albums/1.json
@@ -13,12 +13,12 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   def new
     @album = Album.new
-    8.times { @album.tracks.build }
+    10.times { @album.tracks.build }
   end
 
   # GET /albums/1/edit
   def edit
-    3.times { @album.tracks.build }
+    5.times { @album.tracks.build }
   end
 
   # POST /albums or /albums.json
